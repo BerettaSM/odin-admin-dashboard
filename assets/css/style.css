@@ -52,6 +52,12 @@ h6 {
 
 :root {
     --main-font: 'Roboto', sans-serif;
+
+    --primary-color: #1992D4;
+    --secondary-color: #F0B429;
+    --off-white: #E2E8F0;
+    --text-grey: #636363;
+    --text-dark: #202020;
 }
 
 html {
