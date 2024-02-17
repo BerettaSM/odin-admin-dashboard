@@ -47,3 +47,31 @@ h5,
 h6 {
     overflow-wrap: break-word;
 }
+
+/* Styles */
+
+.app {
+    height: 100%;
+
+    display: grid;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    grid-template-columns: minmax(300px, 1fr) 4fr;
+    grid-template-rows: 200px 4fr;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(167, 167, 167);
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(114, 106, 106);
+}
+
+.main-content {
+    grid-area: main;
+    background-color: grey;
+}
