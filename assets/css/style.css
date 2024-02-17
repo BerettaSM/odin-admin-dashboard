@@ -50,6 +50,14 @@ h6 {
 
 /* Styles */
 
+:root {
+    --main-font: 'Roboto', sans-serif;
+}
+
+html {
+    font-family: var(--main-font);
+}
+
 .app {
     height: 100%;
 
