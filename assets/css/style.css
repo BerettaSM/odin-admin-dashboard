@@ -90,18 +90,14 @@ html {
     display: grid;
     grid-template-rows: 1fr 1.5fr;
     grid-template-columns: 1.5fr 1fr;
-    padding-inline: 32px;
-    column-gap: 32px;
-}
-
-.header__search {
-    align-self: center;
+    padding: 16px 32px;
+    gap: 16px 32px;
 }
 
 .header__search-input {
     display: flex;
     gap: 8px;
-    padding: 16px;
+    padding: 0 16px;
     width: 100%;
 }
 
@@ -111,7 +107,10 @@ html {
     cursor: pointer;
     padding: 1px;
     overflow: hidden;
-    min-width: 24px;
+    height: 32px;
+    width: 32px;
+    display: grid;
+    place-content: center;
 }
 
 .header__search-input input[type='search'] {
@@ -131,7 +130,21 @@ html {
 }
 
 .header__greeting {
-    background-color: #727171;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 16px;
+    gap: 16px;
+}
+
+.header__greeting-avatar {
+    max-height: 80px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.header__greeting span,
+.header__greeting h2 {
+    font-weight: 500;
 }
 
 .header__actions {
