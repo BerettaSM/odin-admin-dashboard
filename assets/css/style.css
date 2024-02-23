@@ -148,7 +148,21 @@ html {
 }
 
 .header__actions {
-    background-color: #000000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 32px;
+    padding: 16px;
+}
+
+.header__actions button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 100vmax;
+    color: var(--text-white);
+    max-width: 200px;
+    flex: 1;
+    padding-block: 8px;
 }
 
 .main-content {
@@ -219,6 +233,7 @@ html {
 }
 
 button {
+    cursor: pointer;
     transition: filter 250ms ease-in-out;
 }
 
