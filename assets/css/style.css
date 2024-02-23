@@ -126,7 +126,25 @@ html {
 }
 
 .header__user-area {
-    background-color: #302f2f;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+    gap: 32px;
+}
+
+.header__user-area button {
+    border: none;
+    border-radius: 8px;
+    height: 60px;
+    width: 60px;
+    display: grid;
+    place-content: center;
+}
+
+.header__user-area span {
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
 .header__greeting {
@@ -232,13 +250,20 @@ html {
     fill: var(--text-white);
 }
 
+.avatar {
+    max-height: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 button {
+    background-color: var(--text-white);
     cursor: pointer;
     transition: filter 250ms ease-in-out;
 }
 
 button:hover {
-    filter: brightness(0.85);
+    filter: brightness(0.8);
 }
 
 .visually-hidden {
