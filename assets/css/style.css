@@ -69,7 +69,7 @@ h6 {
         2.6px 2.7px 3.9px -0.5px hsl(var(--shadow-color) / 0.44),
         5.2px 5.4px 7.9px -1px hsl(var(--shadow-color) / 0.42),
         9.7px 10px 14.6px -1.5px hsl(var(--shadow-color) / 0.39),
-        17.2px 17.7px 25.9px -2px hsl(var(--shadow-color) / 0.37);
+        4.7px 14.7px 10.9px -2px hsl(var(--shadow-color) / 0.37);
 }
 
 html {
@@ -214,22 +214,23 @@ html {
     grid-template-rows: 2.5fr 2fr;
     padding: 24px;
     padding-inline-start: 0px;
+    column-gap: 12px;
+}
+
+.main-content h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
 .main-content__projects {
     grid-area: projects;
-    height: calc(100dvh - 200px - 24px - 24px - 32px);
+    height: calc(100dvh - 200px - 24px - 24px - 32px - 24px);
 }
 
 .main-content__projects-title {
     margin-inline-start: 24px;
 }
 
-.main-content__projects h2 {
-    font-size: 1.3rem;
-}
-
-.main-content__projects h2,
 .main-content__projects h3 {
     font-weight: 500;
 }
@@ -239,8 +240,8 @@ html {
 }
 
 .main-content__projects-list {
-    padding-block-start: 8px;
-    padding-inline: 24px;
+    margin-block-start: 24px;
+    padding-inline: 24px 12px;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -274,7 +275,7 @@ html {
 }
 
 .project-card:hover {
-    transform: scale(1.05) translate(-5px, -5px);
+    transform: scale(1.03) translate(-5px, -7px);
     box-shadow: var(--shadow-elevation-high);
     transition: transform 200ms linear, box-shadow 200ms linear;
 }
@@ -301,7 +302,38 @@ html {
 
 .main-content__announcements {
     grid-area: announcements;
-    background-color: #3a3838;
+    height: calc((100dvh - 200px - 24px - 24px - 32px) / 4.5 * 2.5);
+    padding-block-end: 64px;
+}
+
+.main-content__announcements-list {
+    margin-block-start: 24px;
+    background-color: var(--text-white);
+    box-shadow: var(--shadow-elevation-medium);
+    max-height: 100%;
+    border-radius: 8px;
+    padding: 20px 32px;
+    overflow-y: auto;
+}
+
+.main-content__announcements-list h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.main-content__announcements-list p {
+    color: var(--text-grey);
+    line-height: 1.2;
+    font-size: 0.9rem;
+}
+
+.announcement {
+    padding-block: 12px;
+    border: 1px solid transparent;
+}
+
+.announcement:not(:first-child) {
+    border-block-start-color: rgb(197, 195, 195);
 }
 
 .main-content__trending {
@@ -385,7 +417,7 @@ button:hover {
 .multi-line-ellipsis {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     overflow: hidden;
 }
 

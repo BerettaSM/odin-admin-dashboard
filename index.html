@@ -306,7 +306,30 @@
                     </div>
                 </section>
 
-                <aside class="main-content__announcements"></aside>
+                <aside class="main-content__announcements">
+                    <h2>Announcements</h2>
+
+                    <div class="main-content__announcements-list">
+
+                        <article class="announcement">
+                            <h3>Site Maintenance</h3>
+                            <p class="multi-line-ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel officiis accusamus amet sint! Sapiente, magni expedita aut aliquid delectus ratione.</p>
+                        </article>
+
+                        <script>
+                            let totalAnnouncements = 8;
+
+                            const announcement = document.querySelector('.announcement');
+
+                            for(let i = 0;i < totalAnnouncements - 1;i++) {
+                                const newAnnouncement = announcement.cloneNode(true);
+
+                                announcement.parentElement.appendChild(newAnnouncement);
+                            }
+                        </script>
+
+                    </div>
+                </aside>
 
                 <aside class="main-content__trending"></aside>
             </main>
