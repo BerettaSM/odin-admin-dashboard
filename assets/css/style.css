@@ -69,9 +69,7 @@ h6 {
         2.6px 2.7px 3.9px -0.5px hsl(var(--shadow-color) / 0.44),
         5.2px 5.4px 7.9px -1px hsl(var(--shadow-color) / 0.42),
         9.7px 10px 14.6px -1.5px hsl(var(--shadow-color) / 0.39),
-        17.2px 17.7px 25.9px -2px hsl(var(--shadow-color) / 0.37),
-        29px 29.9px 43.7px -2.5px hsl(var(--shadow-color) / 0.35),
-        46.4px 47.8px 69.9px -3px hsl(var(--shadow-color) / 0.33);
+        17.2px 17.7px 25.9px -2px hsl(var(--shadow-color) / 0.37);
 }
 
 html {
@@ -188,11 +186,7 @@ html {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    gap: clamp(
-        1rem,
-        4.2vw - 2.25rem,
-        3rem
-    );
+    gap: clamp(1rem, 4.2vw - 2.25rem, 3rem);
     padding: 16px;
 }
 
@@ -214,15 +208,21 @@ html {
 
     display: grid;
     grid-template-areas:
-        "projects announcements"
-        "projects trending";
+        'projects announcements'
+        'projects trending';
     grid-template-columns: 5fr clamp(300px, 20vw, 600px);
     grid-template-rows: 2.5fr 2fr;
     padding: 24px;
+    padding-inline-start: 0px;
 }
 
 .main-content__projects {
     grid-area: projects;
+    height: calc(100dvh - 200px - 24px - 24px - 32px);
+}
+
+.main-content__projects-title {
+    margin-inline-start: 24px;
 }
 
 .main-content__projects h2 {
@@ -240,12 +240,17 @@ html {
 
 .main-content__projects-list {
     padding-block-start: 8px;
+    padding-inline: 24px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 24px;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .project-card {
-    height: 300px;
-    width: 400px;
-
     position: relative;
     background-color: var(--text-white);
     box-shadow: var(--shadow-elevation-medium);
@@ -254,6 +259,8 @@ html {
     padding: 24px 32px 32px;
     display: flex;
     flex-direction: column;
+    transition: transform 375ms linear, box-shadow 375ms linear;
+    will-change: transform;
 }
 
 .project-card::before {
@@ -264,6 +271,12 @@ html {
     height: 100%;
     width: 8px;
     background-color: var(--secondary-color);
+}
+
+.project-card:hover {
+    transform: scale(1.05) translate(-5px, -5px);
+    box-shadow: var(--shadow-elevation-high);
+    transition: transform 200ms linear, box-shadow 200ms linear;
 }
 
 .project-actions {
@@ -367,6 +380,13 @@ button {
 
 button:hover {
     filter: brightness(0.8);
+}
+
+.multi-line-ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
 
 .visually-hidden {
