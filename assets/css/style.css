@@ -57,7 +57,7 @@ h6 {
     --secondary-color: #f0b429;
     --off-white: #e2e8f0;
     --text-grey: #636363;
-    --text-dark: #202020;
+    --text-dark: #404040;
     --text-white: #f5f5f5;
 
     --shadow-color: 215deg 12% 57%;
@@ -80,6 +80,7 @@ html {
 
 .app {
     height: 100%;
+    color: color(--text-dark);
 
     display: grid;
     grid-template-areas:
@@ -103,7 +104,7 @@ html {
     display: grid;
     grid-template-rows: 1fr 1.5fr;
     grid-template-columns: 1.5fr 1fr;
-    padding: 16px 32px;
+    padding: 24px;
     gap: 16px 32px;
 }
 
@@ -115,7 +116,6 @@ html {
 }
 
 .header__search-input button {
-    border: none;
     border-radius: 6px;
     cursor: pointer;
     padding: 1px;
@@ -147,7 +147,6 @@ html {
 }
 
 .header__user-area button {
-    border: none;
     border-radius: 8px;
     height: 60px;
     width: 60px;
@@ -158,6 +157,7 @@ html {
 .header__user-area span {
     font-size: 1.3rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .header__greeting {
@@ -198,7 +198,6 @@ html {
 
 .header__actions button {
     background-color: var(--primary-color);
-    border: none;
     border-radius: 100vmax;
     color: var(--text-white);
     max-width: 200px;
@@ -219,12 +218,72 @@ html {
         "projects trending";
     grid-template-columns: 5fr clamp(300px, 20vw, 600px);
     grid-template-rows: 2.5fr 2fr;
-    padding: 32px 16px;
+    padding: 24px;
 }
 
 .main-content__projects {
     grid-area: projects;
-    background-color: #202020;
+}
+
+.main-content__projects h2 {
+    font-size: 1.3rem;
+}
+
+.main-content__projects h2,
+.main-content__projects h3 {
+    font-weight: 500;
+}
+
+.main-content__projects p {
+    color: var(--text-grey);
+}
+
+.main-content__projects-list {
+    padding-block-start: 8px;
+}
+
+.project-card {
+    height: 300px;
+    width: 400px;
+
+    position: relative;
+    background-color: var(--text-white);
+    box-shadow: var(--shadow-elevation-medium);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 24px 32px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 8px;
+    background-color: var(--secondary-color);
+}
+
+.project-actions {
+    margin-block-start: auto;
+    margin-inline-start: auto;
+    display: flex;
+    gap: 16px;
+}
+
+.project-actions button {
+    padding: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 8px;
+    display: grid;
+    place-content: center;
+}
+
+.project-actions button .icon {
+    fill: var(--text-dark);
 }
 
 .main-content__announcements {
@@ -301,6 +360,7 @@ html {
 
 button {
     background-color: var(--text-white);
+    border: none;
     cursor: pointer;
     transition: filter 250ms ease-in-out;
 }
