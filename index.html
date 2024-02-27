@@ -14,6 +14,7 @@
     </head>
 
     <body>
+        
         <div class="app">
             <div class="sidebar">
                 <div class="sidebar__logo">
@@ -294,15 +295,15 @@
                         <script>
                             let totalCards = 32;
 
-                            const project = document.querySelector('.project-card');
+                            const project =
+                                document.querySelector('.project-card');
 
-                            for(let i = 0;i < totalCards - 1;i++) {
+                            for (let i = 0; i < totalCards - 1; i++) {
                                 const newProject = project.cloneNode(true);
 
                                 project.parentElement.appendChild(newProject);
                             }
                         </script>
-
                     </div>
                 </section>
 
@@ -310,28 +311,106 @@
                     <h2>Announcements</h2>
 
                     <div class="main-content__announcements-list">
-
                         <article class="announcement">
                             <h3>Site Maintenance</h3>
-                            <p class="multi-line-ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel officiis accusamus amet sint! Sapiente, magni expedita aut aliquid delectus ratione.</p>
+                            <p class="multi-line-ellipsis">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Vel officiis accusamus amet
+                                sint! Sapiente, magni expedita aut aliquid
+                                delectus ratione.
+                            </p>
                         </article>
 
-                        <script>
-                            let totalAnnouncements = 8;
+                        <article class="announcement">
+                            <h3>Community Share Day</h3>
+                            <p class="multi-line-ellipsis">
+                                Iure quia eum quis porro deleniti atque quibusdam vel laborum illo cumque ut eos expedita quod, alias, saepe corrupti ad officia provident nobis omnis error minima!
+                            </p>
+                        </article>
 
-                            const announcement = document.querySelector('.announcement');
-
-                            for(let i = 0;i < totalAnnouncements - 1;i++) {
-                                const newAnnouncement = announcement.cloneNode(true);
-
-                                announcement.parentElement.appendChild(newAnnouncement);
-                            }
-                        </script>
+                        <article class="announcement">
+                            <h3>Updated Privacy Policy</h3>
+                            <p class="multi-line-ellipsis">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorem.
+                            </p>
+                        </article>
 
                     </div>
                 </aside>
 
-                <aside class="main-content__trending"></aside>
+                <aside class="main-content__trending">
+                    <h2>Trending</h2>
+
+                    <div class="main-content__trending-list">
+                        <article class="trending-subject">
+                            <img
+                                class="avatar"
+                                src="assets/images/profile_2.png"
+                            />
+
+                            <div class="trending-subject__info">
+                                <span>@tegan</span>
+                                <span class="subject-name"
+                                    >World Peace Builder</span
+                                >
+                            </div>
+                        </article>
+
+                        <article class="trending-subject">
+                            <img
+                                class="avatar"
+                                src="assets/images/profile_1.png"
+                            />
+
+                            <div class="trending-subject__info">
+                                <span>@morgan</span>
+                                <span class="subject-name"
+                                    >Super Cool Project</span
+                                >
+                            </div>
+                        </article>
+
+                        <article class="trending-subject">
+                            <img
+                                class="avatar"
+                                src="assets/images/profile_3.png"
+                            />
+
+                            <div class="trending-subject__info">
+                                <span>@kendall</span>
+                                <span class="subject-name"
+                                    >Life Changing App</span
+                                >
+                            </div>
+                        </article>
+
+                        <article class="trending-subject">
+                            <img
+                                class="avatar"
+                                src="assets/images/profile_4.png"
+                            />
+
+                            <div class="trending-subject__info">
+                                <span>@alex</span>
+                                <span class="subject-name"
+                                    >No Traffic Maker</span
+                                >
+                            </div>
+                        </article>
+
+                        <article class="trending-subject">
+                            <img
+                                class="avatar"
+                                src="assets/images/profile_5.png"
+                            />
+
+                            <div class="trending-subject__info">
+                                <span>@beavermcbeaverface</span>
+                                <span class="subject-name">Dam Unclogger</span>
+                            </div>
+                        </article>
+                    </div>
+                </aside>
             </main>
         </div>
     </body>

@@ -224,7 +224,7 @@ html {
 
 .main-content__projects {
     grid-area: projects;
-    height: calc(100dvh - 200px - 24px - 24px - 32px - 24px);
+    height: calc(100dvh - 200px - 24px - 24px - 32px);
 }
 
 .main-content__projects-title {
@@ -240,7 +240,7 @@ html {
 }
 
 .main-content__projects-list {
-    margin-block-start: 24px;
+    padding-block-start: 24px;
     padding-inline: 24px 12px;
 
     display: grid;
@@ -338,7 +338,33 @@ html {
 
 .main-content__trending {
     grid-area: trending;
-    background-color: #706d6d;
+    height: calc((100dvh - 200px - 24px - 24px - 32px - 92px) / 4.5 * 2);
+}
+
+.main-content__trending-list {
+    margin-block-start: 24px;
+    background-color: var(--text-white);
+    box-shadow: var(--shadow-elevation-medium);
+    max-height: 100%;
+    border-radius: 8px;
+    padding-inline: 32px;
+    padding-block: 8px 20px;
+    overflow-y: auto;
+}
+
+.trending-subject {
+    display: flex;
+    padding-block: 12px;
+    gap: 12px;
+}
+
+.trending-subject__info{
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-name {
+    color: var(--text-grey);
 }
 
 .sidebar__logo {
