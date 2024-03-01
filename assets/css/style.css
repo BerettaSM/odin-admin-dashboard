@@ -130,7 +130,8 @@ body.overlay-open .backdrop {
     left: 0;
     top: 0;
     height: 100%;
-    min-width: 300px;
+    max-width: 100dvw;
+    padding-inline-end: 48px;
     transform: translateX(-100%);
     transition: transform 250ms ease-in-out;
 }
@@ -201,10 +202,22 @@ body.overlay-open .backdrop {
     gap: 16px 32px;
 }
 
+@media (max-width: 25rem) {
+    .header {
+        padding: 16px 8px;
+    }
+}
+
 @media (max-width: 55rem) {
     .header {
         grid-template-columns: 1fr;
         gap: 8px;
+    }
+}
+
+@media (max-width: 75rem) {
+    .header__search {
+        padding-inline-start: 36px;
     }
 }
 
@@ -252,6 +265,14 @@ body.overlay-open .backdrop {
     }
 }
 
+@media (max-width: 25rem) {
+    .header__user-area {
+        gap: 8px;
+        padding: 0 8px;
+        justify-content: center;
+    }
+}
+
 .header__user-area button {
     border-radius: 8px;
     height: 60px;
@@ -264,6 +285,10 @@ body.overlay-open .backdrop {
     font-size: 1.3rem;
     font-weight: 500;
     white-space: nowrap;
+}
+
+.header__user-area button .icon {
+    min-width: 30px;
 }
 
 .header__greeting {
@@ -287,6 +312,12 @@ body.overlay-open .backdrop {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+@media (max-width: 25rem) {
+    .avatar {
+        max-height: 40px;
+    }
+}
+
 .header__greeting-avatar {
     max-height: 80px;
 }
@@ -306,6 +337,7 @@ body.overlay-open .backdrop {
 
 @media (max-width: 55rem) {
     .header__actions {
+        margin-block-start: 6px;
         padding: 0;
         justify-content: center;
     }
@@ -316,7 +348,6 @@ body.overlay-open .backdrop {
     border-radius: 100vmax;
     color: var(--text-white);
     max-width: 200px;
-    min-width: 90px;
     flex: 1;
     padding: 8px 16px;
     box-shadow: var(--shadow-elevation-medium);
@@ -380,6 +411,12 @@ body.overlay-open .backdrop {
     gap: 24px;
     overflow-y: auto;
     height: 100%;
+}
+
+@media (max-width: 25rem) {
+    .main-content__projects-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
 
 .project-card {
@@ -448,6 +485,12 @@ body.overlay-open .backdrop {
     overflow-y: auto;
 }
 
+@media (max-width: 25rem) {
+    .main-content__announcements-list  {
+        padding: 10px 16px;
+    }
+}
+
 .main-content__announcements-list h3 {
     font-size: 1rem;
     font-weight: 500;
@@ -490,6 +533,13 @@ body.overlay-open .backdrop {
     padding-inline: 32px;
     padding-block: 8px 20px;
     overflow-y: auto;
+}
+
+@media (max-width: 25rem) {
+    .main-content__trending-list {
+        padding-inline: 16px;
+        padding-block-end: 8px;
+    }
 }
 
 .trending-subject {
