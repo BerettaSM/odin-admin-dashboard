@@ -11,6 +11,8 @@ window.addEventListener('focusin', function rememberLastFocus(event) {
 
 window.addEventListener('resize', throttle(closeSidebar));
 
+backdrop.addEventListener('click', closeSidebar);
+
 toggleButton.addEventListener('click', function toggleSidebar() {
     if (sidebar.classList.contains('open')) {
         closeSidebar();
