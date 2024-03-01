@@ -78,6 +78,9 @@ html {
 
 .app {
     height: 100%;
+
+    max-width: 100dvw;
+
     color: color(--text-dark);
 
     display: grid;
@@ -198,6 +201,13 @@ body.overlay-open .backdrop {
     gap: 16px 32px;
 }
 
+@media (max-width: 55rem) {
+    .header {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
 .header__search-input {
     display: flex;
     gap: 8px;
@@ -236,6 +246,12 @@ body.overlay-open .backdrop {
     gap: 32px;
 }
 
+@media (max-width: 55rem) {
+    .header__user-area {
+        gap: 16px;
+    }
+}
+
 .header__user-area button {
     border-radius: 8px;
     height: 60px;
@@ -255,6 +271,12 @@ body.overlay-open .backdrop {
     align-items: center;
     padding-inline-start: 16px;
     gap: 16px;
+}
+
+@media (max-width: 55rem) {
+    .header__greeting {
+        display: none;
+    }
 }
 
 .avatar {
@@ -282,6 +304,13 @@ body.overlay-open .backdrop {
     padding: 16px;
 }
 
+@media (max-width: 55rem) {
+    .header__actions {
+        padding: 0;
+        justify-content: center;
+    }
+}
+
 .header__actions button {
     background-color: var(--primary-color);
     border-radius: 100vmax;
@@ -302,11 +331,20 @@ body.overlay-open .backdrop {
     grid-template-areas:
         'projects announcements'
         'projects trending';
-    grid-template-columns: 5fr clamp(300px, 20vw, 600px);
+    grid-template-columns: 5fr clamp(300px, 20vw, 600px); /*  HERE  */
     grid-template-rows: 2.5fr 2fr;
     padding: 24px;
     padding-inline-start: 0px;
     column-gap: 12px;
+}
+
+@media (max-width: 55rem) {
+    .main-content {
+        grid-template-columns: repeat(2, 100dvw);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-inline-end: 0;
+    }
 }
 
 .main-content h2 {
@@ -317,6 +355,7 @@ body.overlay-open .backdrop {
 .main-content__projects {
     grid-area: projects;
     height: calc(100dvh - 200px - 24px - 24px - 32px);
+    scroll-snap-align: start;
 }
 
 .main-content__projects-title {
@@ -396,6 +435,7 @@ body.overlay-open .backdrop {
     grid-area: announcements;
     height: calc((100dvh - 200px - 24px - 24px - 32px) / 4.5 * 2.5);
     padding-block-end: 64px;
+    scroll-snap-align: end;
 }
 
 .main-content__announcements-list {
@@ -431,6 +471,14 @@ body.overlay-open .backdrop {
 .main-content__trending {
     grid-area: trending;
     height: calc((100dvh - 200px - 24px - 24px - 32px - 92px) / 4.5 * 2);
+    scroll-snap-align: end;
+}
+
+@media (max-width: 55rem) {
+    .main-content__trending,
+    .main-content__announcements {
+        padding-inline: 24px;
+    } 
 }
 
 .main-content__trending-list {
